@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const {exec} = require("./lib.js")
+const {exec} = import("./lib.js")
 
 module.exports = {
     healthcheck: async ()=> {
