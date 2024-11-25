@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-const {exec} = import("./lib.js")
-
+let exec
 module.exports = {
     healthcheck: async ()=> {
+        exec = exec || (await import("./lib.js")).exec
         try {
             await exec('ping', ['-c', '1', '8.8.8.8'])
         } catch (error) {
