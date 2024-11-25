@@ -1,8 +1,8 @@
 import EventEmitter from "node:events";
 import child_process from "node:child_process";
 
-const log = (...args) => console.log(`[APP]: `, ...args);
-const loge = (...args) => console.log(`[APP ERROR]: `, ...args);
+const UID = (process.env.SETUID !== "" && typeof process.env.SETUID === "string")  ? process.env.GID : undefined;
+const GID = (process.env.SETGID !== "" && typeof process.env.SETGID === "string")  ? process.env.GID : undefined;
 
 export default class App extends EventEmitter {
     static iptables = []
@@ -18,7 +18,10 @@ export default class App extends EventEmitter {
         if (this.state !== undefined) {
             return
         }
-        let cp = child_process.spawn('true')
+        let cp = child_process.spawn('true', [], {
+            uid: UID,
+            gid: GID,
+        })
 
         const bufferClear = []
         function bufferedOutput(prefix) {
