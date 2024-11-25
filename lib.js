@@ -176,6 +176,8 @@ Endpoint = ${conn_data.ip}:${pia_json.server_port}
         this.active = true
         setTimeout(()=>this.healthcheck(), 5000)
         this.emit('connected')
+
+        await this.port_forward()
     }
 
     async port_forward() {
