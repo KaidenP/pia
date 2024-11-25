@@ -48,5 +48,5 @@ jobs:
           tags: |
               kaidenprince/pia:latest
               kaidenprince/pia:1.0.0
-              ghcr.io/KaidenP/pia:latest
-              ghcr.io/KaidenP/pia:1.0.0
+              ghcr.io/kaidenp/pia:latest
+              ghcr.io/kaidenp/pia:1.0.0
