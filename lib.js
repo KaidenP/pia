@@ -212,7 +212,7 @@ Endpoint = ${conn_data.ip}:${pia_json.server_port}
                 payload: pf_json.payload
             })).toString()}`, {
                 headers: {
-                    Host: hostname
+                    Host: this.state.conn_data.cn
                 },
                 https: {
                     certificateAuthority: await fs.readFile('ca.rsa.4096.crt')
