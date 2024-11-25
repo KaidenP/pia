@@ -1,7 +1,7 @@
 import got from 'got'
 import child_process from "node:child_process";
 import fs from "node:fs/promises";
-import {healthcheck} from "./healthcheck.js";
+import {healthcheck} from "./healthcheck.cjs";
 import EventEmitter from 'node:events'
 
 function exec(cmd, args, stdin) {
