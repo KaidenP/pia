@@ -11,7 +11,7 @@ export default class App extends EventEmitter {
         this.state = undefined
         this.connected = false
     }
-    async start(port) {
+    async start() {
         if (!this.connected) {
             console.log("Not Connected, not starting app")
         }
