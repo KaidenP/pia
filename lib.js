@@ -174,7 +174,7 @@ Endpoint = ${conn_data.ip}:${pia_json.server_port}
         }
 
         this.active = true
-        setTimeout(()=>this.healthcheck(), 1000)
+        setTimeout(()=>this.healthcheck(), 10000)
         this.emit('connected')
     }
 
