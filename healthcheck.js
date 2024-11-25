@@ -12,6 +12,7 @@ export async function healthcheck() {
     return 0
 }
 
-if (require.main === module) {
+// if (require.main === module) {
+if (!module.parent)
     healthcheck().then(code=>process.exit(code));
 }
